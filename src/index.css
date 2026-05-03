@@ -1,0 +1,358 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font families */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+  --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+  
+  /* Light mode colors */
+  --color-bg: #FAFAF8;
+  --color-surface: #FFFFFF;
+  --color-dark: #111111;
+  --color-text: #1C1C1C;
+  --color-text-secondary: #5A5A5A;
+  --color-text-muted: #999999;
+  --color-border: #E8E8E8;
+  --color-border-light: #F0F0F0;
+  --color-accent: #E00000;
+  --color-accent-hover: #C80000;
+  --color-accent-light: #FFE6E6;
+  --color-accent-muted: #F07474;
+  --color-warm: #F5F0EB;
+}
+
+/* Dark mode colors - soft, elegant, easy on eyes */
+.dark {
+  --color-bg: #0F0F13;
+  --color-surface: #17171C;
+  --color-dark: #FAFAF8;
+  --color-text: #E8E8EC;
+  --color-text-secondary: #A0A0A8;
+  --color-text-muted: #6E6E78;
+  --color-border: #24242B;
+  --color-border-light: #2B2B33;
+  --color-accent: #F02424;
+  --color-accent-hover: #FF3A3A;
+  --color-accent-light: #3B1D1D;
+  --color-accent-muted: #8A3939;
+  --color-warm: #151519;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Display font — geometric, strong, harmonious with logo */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.75);
+  }
+}
+
+@keyframes wordConfusion {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) skewX(0deg);
+    letter-spacing: -0.02em;
+    opacity: 1;
+  }
+  18% {
+    transform: translate3d(-1px, 0, 0) skewX(-2deg);
+    letter-spacing: 0.01em;
+    opacity: 0.94;
+  }
+  36% {
+    transform: translate3d(1px, -1px, 0) skewX(1.5deg);
+    letter-spacing: -0.01em;
+    opacity: 0.88;
+  }
+  54% {
+    transform: translate3d(-1px, 1px, 0) skewX(-1deg);
+    letter-spacing: 0em;
+    opacity: 0.93;
+  }
+  72% {
+    transform: translate3d(0.5px, 0, 0) skewX(0.75deg);
+    letter-spacing: -0.015em;
+    opacity: 0.97;
+  }
+}
+
+@keyframes confusionGhostA {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  22% {
+    transform: translate3d(-3px, 0, 0);
+    opacity: 0.18;
+  }
+  42% {
+    transform: translate3d(2px, -1px, 0);
+    opacity: 0.08;
+  }
+  64% {
+    transform: translate3d(-2px, 1px, 0);
+    opacity: 0.14;
+  }
+}
+
+@keyframes confusionGhostB {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  28% {
+    transform: translate3d(3px, 0, 0);
+    opacity: 0.14;
+  }
+  48% {
+    transform: translate3d(-2px, 1px, 0);
+    opacity: 0.06;
+  }
+  68% {
+    transform: translate3d(2px, -1px, 0);
+    opacity: 0.11;
+  }
+}
+
+@keyframes wordClarity {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    letter-spacing: -0.02em;
+    opacity: 1;
+  }
+  35% {
+    transform: translate3d(0, 2px, 0);
+    letter-spacing: 0.01em;
+    opacity: 0.9;
+  }
+  60% {
+    transform: translate3d(0, 0, 0);
+    letter-spacing: -0.005em;
+    opacity: 1;
+  }
+}
+
+@keyframes clarityUnderline {
+  0%, 18%, 100% {
+    transform: scaleX(0.14);
+    opacity: 0.25;
+  }
+  42% {
+    transform: scaleX(0.4);
+    opacity: 0.5;
+  }
+  62%, 78% {
+    transform: scaleX(1);
+    opacity: 0.95;
+  }
+}
+
+@keyframes clarityGlow {
+  0%, 100% {
+    opacity: 0;
+    transform: scaleX(0.85);
+  }
+  60%, 75% {
+    opacity: 0.14;
+    transform: scaleX(1);
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulseDot 1.4s ease-in-out infinite;
+}
+
+.word-confusion {
+  position: relative;
+  display: inline-block;
+  animation: wordConfusion 5.6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.word-confusion::before,
+.word-confusion::after {
+  content: attr(data-word);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: currentColor;
+}
+
+.word-confusion::before {
+  animation: confusionGhostA 5.6s ease-in-out infinite;
+}
+
+.word-confusion::after {
+  animation: confusionGhostB 5.6s ease-in-out infinite;
+}
+
+.word-clarity {
+  position: relative;
+  display: inline-block;
+  animation: wordClarity 5.6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.word-clarity::before {
+  content: '';
+  position: absolute;
+  inset: -0.02em -0.08em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, currentColor 18%, transparent) 50%, transparent 100%);
+  opacity: 0;
+  animation: clarityGlow 5.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.word-clarity::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.04em;
+  width: 100%;
+  height: 0.06em;
+  border-radius: 999px;
+  background: currentColor;
+  transform-origin: left center;
+  animation: clarityUnderline 5.6s ease-in-out infinite;
+  opacity: 0.45;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fadeUp 0.6s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeUp 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fadeUp 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Smooth link underline */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Subtle hero gradient glow - works in both modes */
+.hero-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-glow::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224, 0, 0, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-glow::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224, 0, 0, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Dark mode adjustments for hero glow */
+.dark .hero-glow::before {
+  background: radial-gradient(circle, rgba(240, 36, 36, 0.06) 0%, transparent 70%);
+}
+
+.dark .hero-glow::after {
+  background: radial-gradient(circle, rgba(240, 36, 36, 0.04) 0%, transparent 70%);
+}
+
+/* Smooth transitions for theme changes */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Exclude certain elements from transitions for performance */
+img, video, canvas, svg {
+  transition: none;
+}
+
+/* Safe area padding for bottom nav on iOS */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom);
+}

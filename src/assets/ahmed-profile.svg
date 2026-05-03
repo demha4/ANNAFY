@@ -1,0 +1,69 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1080" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#151519"/>
+      <stop offset="1" stop-color="#24242A"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 620) rotate(90) scale(420 420)">
+      <stop stop-color="#5A5A63"/>
+      <stop offset="1" stop-color="#24242A" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="0" y="0" width="1080" height="1080" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <g filter="url(#blur)">
+    <ellipse cx="600" cy="620" rx="260" ry="300" fill="url(#light)"/>
+  </g>
+
+  <!-- shoulders / shirt -->
+  <path d="M325 944C355 815 437 734 540 734C643 734 725 815 755 944H325Z" fill="#D9D9D9"/>
+  <path d="M470 744H610V864H470V744Z" fill="#D9D9D9"/>
+  <path d="M470 744L540 810L610 744" stroke="#C9C9C9" stroke-width="3"/>
+
+  <!-- neck -->
+  <rect x="505" y="675" width="70" height="85" rx="25" fill="#AFAFAF"/>
+
+  <!-- head -->
+  <ellipse cx="540" cy="505" rx="175" ry="210" fill="#9F9F9F"/>
+
+  <!-- hair -->
+  <path d="M390 440C390 338 460 288 540 288C620 288 690 338 690 440C640 395 585 380 540 380C495 380 440 395 390 440Z" fill="#111111"/>
+  <rect x="395" y="350" width="290" height="65" rx="32.5" fill="#111111"/>
+
+  <!-- ears -->
+  <ellipse cx="365" cy="525" rx="20" ry="35" fill="#8E8E8E"/>
+  <ellipse cx="715" cy="525" rx="20" ry="35" fill="#8E8E8E"/>
+
+  <!-- glasses -->
+  <rect x="422" y="468" width="106" height="78" rx="28" stroke="#111111" stroke-width="11"/>
+  <rect x="552" y="468" width="106" height="78" rx="28" stroke="#111111" stroke-width="11"/>
+  <path d="M528 505H552" stroke="#111111" stroke-width="11" stroke-linecap="round"/>
+  <path d="M658 488L705 470" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+  <path d="M422 488L375 470" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- eyes -->
+  <ellipse cx="475" cy="507" rx="16" ry="10" fill="#2C2C2C"/>
+  <ellipse cx="605" cy="507" rx="16" ry="10" fill="#2C2C2C"/>
+  <circle cx="480" cy="505" r="4" fill="#EAEAEA"/>
+  <circle cx="610" cy="505" r="4" fill="#EAEAEA"/>
+
+  <!-- nose -->
+  <path d="M540 530C535 558 532 575 540 583C548 575 545 558 540 530Z" fill="#7E7E7E"/>
+
+  <!-- mouth -->
+  <path d="M495 616C523 632 557 632 585 616" stroke="#4A4A4A" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- jaw shadow -->
+  <path d="M445 596C470 668 610 668 635 596" fill="#7B7B7B" fill-opacity="0.4"/>
+
+  <!-- shirt collar -->
+  <path d="M455 752L510 812L474 846L430 796L455 752Z" fill="#CFCFCF"/>
+  <path d="M625 752L570 812L606 846L650 796L625 752Z" fill="#CFCFCF"/>
+
+  <!-- buttons -->
+  <circle cx="540" cy="783" r="8" fill="#BDBDBD" stroke="#A8A8A8" stroke-width="2"/>
+  <circle cx="540" cy="825" r="7" fill="#BDBDBD" stroke="#A8A8A8" stroke-width="2"/>
+</svg>
