@@ -9,13 +9,13 @@ export default function Resume() {
     <main>
       <SEO
         title="Resume — Ahmed EL Hanafi (Annafy) | Brand Designer Morocco"
-        description="Ahmed EL Hanafi (Annafy) — Brand Designer & UI/UX Consultant with 8+ years of experience in Morocco. Expertise in branding, logo design, web design, and UI/UX. Based in Agadir, working globally."
+        description="Ahmed EL Hanafi (Annafy) — Brand Designer & UI/UX Consultant with 10+ years of experience in Morocco. Expertise in branding, logo design, web design, and UI/UX. Based in Agadir, working globally."
       />
       <PageHero
         label="Resume"
         title="Ahmed EL Hanafi"
         titleAccent="Brand Designer & Consultant"
-        description="8+ years of experience helping brands move from confusion to clarity — through positioning, design, and honest decisions."
+        description="10+ years of experience helping brands move from confusion to clarity — through positioning, design, and honest decisions."
       />
 
       {/* ── Statement Divider ── */}

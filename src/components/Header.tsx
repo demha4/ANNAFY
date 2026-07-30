@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
+import { SHOW_WORKS } from '../config/flags';
 
 const pageLinks = [
   { label: 'About', to: '/about' },
-  { label: 'Work', to: '/works' },
+  ...(SHOW_WORKS ? [{ label: 'Work', to: '/works' }] : []),
   { label: 'Resume', to: '/resume' },
   { label: 'Packages', to: '/packages' },
   { label: 'Contact', to: '/contact' },

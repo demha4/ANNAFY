@@ -3,6 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BottomNav from './components/BottomNav';
+import WhatsAppFloat from './components/WhatsAppFloat';
 import Home from './pages/Home';
 import About from './pages/About';
 import Works from './pages/Works';
@@ -32,6 +33,7 @@ export default function App() {
           </Routes>
           <Footer />
           <BottomNav />
+          <WhatsAppFloat />
         </div>
       </BrowserRouter>
     </ThemeProvider>

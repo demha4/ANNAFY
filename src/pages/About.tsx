@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Reveal, Section, SectionLabel } from '../components/UI';
 import SEO from '../components/SEO';
 import profileImage from '../assets/ahmed-profile.jpg';
+import { SHOW_WORKS } from '../config/flags';
 
 export default function About() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -11,7 +12,7 @@ export default function About() {
     <main>
       <SEO
         title="About Annafy — Brand Designer in Morocco | Agadir"
-        description="Ahmed EL Hanafi (Annafy) is a Brand Designer & Consultant based in Agadir, Morocco with 8+ years of experience. Learn about my approach to branding, UI/UX design, and helping Moroccan and global brands achieve clarity."
+        description="Ahmed EL Hanafi (Annafy) is a Brand Designer & Consultant based in Agadir, Morocco with 10+ years of experience. Learn about my approach to branding, UI/UX design, and helping Moroccan and global brands achieve clarity."
       />
       <section className="bg-bg pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="max-w-[1200px] mx-auto px-6 md:px-8">
@@ -283,7 +284,7 @@ export default function About() {
         </Reveal>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 md:gap-12">
           {[
-            { num: '8+', label: 'Years of experience' },
+            { num: '10+', label: 'Years of experience' },
             { num: '60+', label: 'Brands helped' },
             { num: '3', label: 'Countries worked in' },
             { num: '20+', label: 'Projects completed' },
@@ -379,7 +380,7 @@ export default function About() {
                 Start a project
               </Link>
               <Link
-                to="/works"
+                to={SHOW_WORKS ? '/works' : '/packages'}
                 className="inline-flex items-center justify-center h-12 px-8 rounded-full border border-border text-dark/80 bg-surface hover:text-dark hover:border-text-muted transition-colors duration-200"
               >
                 Get clarity

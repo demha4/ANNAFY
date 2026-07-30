@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import { projects as projectData } from '../data/projects';
+import { SHOW_WORKS } from '../config/flags';
 
 /* ─── Intersection Observer Hook ─── */
 function useInView(threshold = 0.15) {
@@ -88,7 +89,7 @@ function Hero() {
               Start a project
             </a>
             <a
-              href="#work"
+              href={SHOW_WORKS ? '#work' : '#services'}
               className="inline-flex w-full sm:w-auto items-center justify-center h-12 px-7 rounded-full border border-border text-text-secondary hover:text-dark hover:border-text-muted transition-colors duration-200"
             >
               Get clarity
@@ -101,7 +102,7 @@ function Hero() {
 
         <div className="mt-14 md:mt-28 grid grid-cols-2 gap-8 max-w-xl mx-auto border-t border-border-light pt-8 md:pt-10">
           {[
-            { num: '8+', label: 'Years of experience' },
+            { num: '10+', label: 'Years of experience' },
             { num: '60+', label: 'Brands helped' },
           ].map((stat, i) => (
             <div key={stat.label} className={`animate-fade-up-delay-3 ${i === 0 ? 'text-left' : 'text-right'}`}>
@@ -344,7 +345,7 @@ function About() {
         <div className="space-y-6">
           <Reveal delay={100}>
             <p className="text-text-secondary leading-relaxed">
-              I&apos;m Ahmed EL Hanafi — most people call me Annafy. A Brand Designer and Consultant based in Morocco. I have been doing this for over 8 years, and I still learn something new every day.
+              I&apos;m Ahmed EL Hanafi — most people call me Annafy. A Brand Designer and Consultant based in Morocco. I have been doing this for over 10 years, and I still learn something new every day.
             </p>
           </Reveal>
           <Reveal delay={150}>
@@ -915,11 +916,11 @@ export default function Home() {
     <main>
       <SEO
         title="Annafy — Brand Designer & UI/UX Consultant in Morocco | Agadir"
-        description="Brand Designer & UI/UX Consultant based in Agadir, Morocco. Specializing in branding, logo design, web design, and UI/UX for Moroccan and global brands. 8+ years of experience helping businesses from confusion to clarity."
+        description="Brand Designer & UI/UX Consultant based in Agadir, Morocco. Specializing in branding, logo design, web design, and UI/UX for Moroccan and global brands. 10+ years of experience helping businesses from confusion to clarity."
       />
       <Hero />
       <FocusClarity />
-      <Work />
+      {SHOW_WORKS && <Work />}
       <Services />
       <About />
       <Approach />

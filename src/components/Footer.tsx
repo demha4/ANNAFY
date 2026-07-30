@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { SHOW_WORKS } from '../config/flags';
 
 function Logo({ className = '' }: { className?: string }) {
   return (
@@ -21,7 +22,7 @@ function Logo({ className = '' }: { className?: string }) {
 
 export default function Footer() {
   const pages = [
-    { label: 'Work', to: '/works' },
+    ...(SHOW_WORKS ? [{ label: 'Work', to: '/works' }] : []),
     { label: 'Process', to: '/#approach' },
     { label: 'Pricing', to: '/packages' },
     { label: 'About', to: '/about' },

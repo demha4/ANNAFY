@@ -41,15 +41,15 @@ const offers = [
     subtitle: 'Find out what is broken.',
     problem: 'Your brand is not converting. You do not know why.',
     outcome: 'A clear roadmap showing exactly what to fix and in what order.',
-    starting: '$500',
+    starting: '$150',
   },
   {
     id: 'system',
     title: 'Conversion System',
     subtitle: 'Fix perception. Improve conversion.',
     problem: 'You want to launch with excellence, or you are already selling but know you should be making more.',
-    outcome: 'A brand that looks as good as it performs — and converts visitors into buyers.',
-    starting: '$2,500',
+    outcome: 'Brand identity + website design, together — a brand that looks as good as it performs and converts visitors into buyers.',
+    starting: '$1,300',
     featured: true,
   },
   {
@@ -57,8 +57,37 @@ const offers = [
     title: 'Brand Repositioning',
     subtitle: 'Complete transformation.',
     problem: 'Your brand no longer matches where you are going.',
-    outcome: 'A brand that positions you at the top of your market.',
-    starting: '$5,000',
+    outcome: 'Audit + identity + website + hands-on consulting through launch — a brand that positions you at the top of your market.',
+    starting: '$2,200',
+  },
+];
+
+const soloServices = [
+  {
+    id: 'logo',
+    title: 'Logo Design',
+    description: 'A distinctive, timeless mark — not a template. Deep discovery, multiple concept directions, refinement, and a full file package (vector, favicon, social, print-ready).',
+    price: '$300–$800',
+    note: 'Most requested',
+  },
+  {
+    id: 'identity',
+    title: 'Brand Identity System',
+    description: 'Logo + typography + color system + iconography + brand guidelines. Everything your team needs to stay consistent across every touchpoint.',
+    price: '$1,000–$2,500',
+  },
+  {
+    id: 'website',
+    title: 'Website Design',
+    description: 'A custom-designed, conversion-focused website — UI/UX, responsive layouts, and a design system ready to hand off to development.',
+    price: '$500–$1,500',
+  },
+  {
+    id: 'consulting',
+    title: 'Brand & Design Consulting',
+    description: 'Fresh eyes on your brand, product, or team. Design reviews, direction, and decision-making support — booked by the hour or as a monthly retainer.',
+    price: '$20/hr',
+    priceNote: 'or $300–$600/mo retainer',
   },
 ];
 
@@ -78,11 +107,11 @@ const revenueRanges = [
 ];
 
 const budgetRanges = [
-  'Under $1,000',
+  'Under $300',
+  '$300 — $1,000',
   '$1,000 — $2,500',
   '$2,500 — $5,000',
-  '$5,000 — $10,000',
-  '$10,000+',
+  '$5,000+',
 ];
 
 /* ═══════════════════════════════════════════════════
@@ -130,8 +159,8 @@ export default function Packages() {
   return (
     <main>
       <SEO
-        title="Offers — Brand Clarity & Conversion | Annafy"
-        description="Brand Audit, Conversion System, and Repositioning for serious brands. Fix perception, clarify message, improve conversion. Based in Agadir, Morocco."
+        title="Pricing — Logo Design, Brand Identity & Website Design | Annafy"
+        description="Clear, upfront pricing for logo design, brand identity systems, website design, and brand consulting. Premium work for founders who see design as an investment. Based in Agadir, Morocco."
       />
       
       {/* ── Hero ─ */}
@@ -216,6 +245,73 @@ export default function Packages() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Individual Services & Pricing ── */}
+      <section className="bg-surface border-t border-border-light py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-8">
+          <Reveal>
+            <p className="text-xs font-medium text-text-muted uppercase tracking-[0.15em] mb-4">
+              Individual Services
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-dark leading-[1.05] mb-4">
+              Need one thing done
+              <br />
+              <span className="text-text-secondary italic font-normal">exceptionally well?</span>
+            </h2>
+            <p className="text-sm md:text-base text-text-secondary max-w-lg mb-10 md:mb-14">
+              Standalone services with clear, upfront pricing. No hidden scope, no race to the bottom — just work built to become a reference in your industry.
+            </p>
+          </Reveal>
+
+          <div className="border-t border-border">
+            {soloServices.map((service, i) => (
+              <Reveal key={service.id} delay={i * 80}>
+                <div
+                  onClick={() => { setSelectedOffer(service.id); scrollToForm(); }}
+                  className="cursor-pointer grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-7 md:py-8 border-b border-border group"
+                >
+                  <div className="md:col-span-3 flex items-start md:items-center justify-between md:justify-start gap-3">
+                    <h3 className="text-lg font-semibold text-dark group-hover:text-accent transition-colors duration-200">
+                      {service.title}
+                    </h3>
+                    {service.note && (
+                      <span className="shrink-0 inline-flex items-center h-6 px-2.5 text-[10px] font-semibold uppercase tracking-wider bg-accent/10 text-accent rounded-full md:hidden">
+                        {service.note}
+                      </span>
+                    )}
+                  </div>
+                  <div className="md:col-span-6">
+                    <p className="text-sm md:text-base text-text-secondary leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="md:col-span-3 flex md:flex-col md:items-end justify-between md:justify-center gap-1">
+                    <div className="flex items-center gap-2">
+                      {service.note && (
+                        <span className="hidden md:inline-flex items-center h-6 px-2.5 text-[10px] font-semibold uppercase tracking-wider bg-accent/10 text-accent rounded-full">
+                          {service.note}
+                        </span>
+                      )}
+                      <p className="font-display text-2xl font-medium text-dark md:text-right">
+                        {service.price}
+                      </p>
+                    </div>
+                    {service.priceNote && (
+                      <p className="text-xs text-text-muted md:text-right">{service.priceNote}</p>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={300}>
+            <p className="mt-8 text-xs text-text-muted max-w-lg">
+              Ranges reflect typical project scope and complexity — you will get an exact quote after our first conversation. Tap any service above to jump straight to the request form.
+            </p>
+          </Reveal>
         </div>
       </section>
 
